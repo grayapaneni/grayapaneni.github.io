@@ -78,14 +78,63 @@ nav.scrolled .nav-back:hover{color:var(--bg);}
 .cs-tasks li.active-task::before{content:'◐';color:var(--gold);}
 
 .cs-table-wrap{overflow-x:auto;margin:1.8rem 0;}
-table{width:100%;border-collapse:collapse;font-size:.875rem;}
-thead th{text-align:left;padding:.75rem 1rem;font-family:'IBM Plex Mono',monospace;font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);border-bottom:2px solid var(--border);}
-tbody td{padding:.9rem 1rem;border-bottom:1px solid var(--border2);color:var(--muted);}
-tbody tr:last-child td{border-bottom:none;}
-tbody tr.winner td{color:var(--text);}
-tbody tr.winner td:first-child{color:var(--accent);font-weight:500;}
-.winner-flag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:.58rem;background:rgba(182,58,42,.08);color:var(--accent);padding:.15rem .5rem;border-radius:2px;margin-left:.5rem;border:1px solid rgba(182,58,42,.2);}
-tbody tr:hover td{background:var(--bg2);}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:.875rem;
+}
+
+thead th{
+  text-align:left;
+  padding:.75rem 1rem;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.62rem;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  color:var(--muted);
+  border-bottom:2px solid var(--border);
+}
+
+tbody td{
+  padding:.9rem 1rem;
+  border-bottom:1px solid var(--border2);
+  color:var(--muted);
+}
+
+tbody tr:last-child td{
+  border-bottom:none;
+}
+
+/* 🔥 WINNER ROW ALWAYS WHITE */
+tbody tr.winner{
+  background:rgba(255,255,255,0.04);
+}
+
+tbody tr.winner td{
+  color:#ffffff !important;
+}
+
+tbody tr.winner td:first-child{
+  color:var(--accent) !important;
+  font-weight:500;
+}
+
+.winner-flag{
+  display:inline-block;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.58rem;
+  background:rgba(182,58,42,.08);
+  color:var(--accent);
+  padding:.15rem .5rem;
+  border-radius:2px;
+  margin-left:.5rem;
+  border:1px solid rgba(182,58,42,.2);
+}
+
+tbody tr:hover td{
+  background:var(--bg2);
+}
 
 .cs-findings{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.8rem;}
 .cs-finding{background:var(--bg2);border:1px solid var(--border2);border-radius:4px;padding:1.4rem 1.6rem;transition:border-color .2s;}
@@ -164,7 +213,7 @@ footer{background:var(--dark);padding:2rem 3.5rem;display:flex;justify-content:s
     <div class="cs-live">Live Build · March 2026</div>
     <div class="cs-hero-cat">Data Science · Security ML · Federated Intelligence</div>
     <h1>CyberShield —<br/><em>Privacy-Preserving</em><br/>IoT Threat Detection</h1>
-    <p class="cs-hero-sub">I trained an XGBoost classifier on 9.5 million real network flows captured from 105 actual IoT devices to detect 33 distinct attack types in real time. The model runs on a $70 Raspberry Pi, watching live home network traffic 24/7 — no cloud, no subscription, zero personal data transmitted. Every inference is local. Every decision is explainable.</p>
+    <p class="cs-hero-sub">I trained an XGBoost classifier on 9.5 million real network flows captured from 105 actual IoT devices to detect 33 distinct attack types in real time. The model runs on a $70 Raspberry Pi, watching live home network traffic 24/7, no cloud, no subscription, zero personal data transmitted. Every inference is local. Every decision is explainable.</p>
     <div class="cs-stats-strip">
       <div class="cs-stat"><div class="cs-stat-val">99.56%</div><div class="cs-stat-label">model accuracy</div></div>
       <div class="cs-stat"><div class="cs-stat-val">9.5M</div><div class="cs-stat-label">training records</div></div>
@@ -180,7 +229,7 @@ footer{background:var(--dark);padding:2rem 3.5rem;display:flex;justify-content:s
   <div class="cs-section fade-in">
     <div class="section-label">01 · The problem</div>
     <div class="cs-h2">The people most at risk<br/>have the fewest defenses</div>
-    <p class="cs-p">The average home now has 12 or more connected devices — cameras, thermostats, smart speakers, baby monitors. None of them have antivirus software. None send alerts. When a hacker quietly recruits a baby monitor into a botnet or starts watching through a camera, the owner never finds out. There is no alarm.</p>
+    <p class="cs-p">The average home now has 12 or more connected devices: cameras, thermostats, smart speakers, baby monitors. None of them has antivirus software. None sends alerts. When a hacker quietly recruits a baby monitor into a botnet or starts watching through a camera, the owner never finds out. There is no alarm.</p>
     <p class="cs-p">In public, Bluetooth-enabled skimmers hidden inside gas station pumps and ATMs harvest card numbers wirelessly. A $20 device operated from a car 30 feet away is completely invisible to the person tapping their card. Consumer security products address neither problem. CyberShield is built for this gap.</p>
   </div>
 </div>
@@ -198,7 +247,7 @@ footer{background:var(--dark);padding:2rem 3.5rem;display:flex;justify-content:s
             <span class="cs-phase-name">Phase 1 — Build & prove the brain</span>
             <span class="cs-phase-badge badge-active">85% complete</span>
           </div>
-          <p class="cs-phase-desc">ML classifier trained on CIC-IoT 2023 dataset — 9.5M records from 105 real IoT devices. XGBoost selected as production model after head-to-head comparison with Random Forest and LightGBM. Full SHAP explainability, PCA cluster analysis, confusion matrix, and feature importance completed.</p>
+          <p class="cs-phase-desc">ML classifier trained on CIC-IoT 2023 dataset, 9.5M records from 105 real IoT devices. XGBoost selected as production model after head-to-head comparison with Random Forest and LightGBM. Full SHAP explainability, PCA cluster analysis, confusion matrix, and feature importance completed.</p>
           <ul class="cs-tasks">
             <li class="done-task">Load and sample dataset (9.5M rows)</li>
             <li class="done-task">Data quality check and preprocessing</li>
@@ -266,7 +315,7 @@ footer{background:var(--dark);padding:2rem 3.5rem;display:flex;justify-content:s
   <div class="cs-dark fade-in">
     <div class="section-label">03 · Model results</div>
     <div class="cs-h2">Three models. One winner.<br/><em>Here's why XGBoost.</em></div>
-    <p class="cs-p">I didn't just train one model and call it done. Random Forest, XGBoost, and LightGBM were all trained and evaluated across overall accuracy, macro F1, and — most importantly — performance on minority attack classes. Those minority classes are the hardest and most dangerous to miss.</p>
+    <p class="cs-p">I didn't just train one model and call it done. Random Forest, XGBoost, and LightGBM were all trained and evaluated across overall accuracy, macro F1, and most importantly, performance on minority attack classes. Those minority classes are the hardest and most dangerous to miss.</p>
     <div class="cs-table-wrap">
       <table>
         <thead>
@@ -280,7 +329,7 @@ footer{background:var(--dark);padding:2rem 3.5rem;display:flex;justify-content:s
       </table>
     </div>
     <div class="cs-quote">
-      <p>"XGBoost was chosen not just for overall accuracy but for the strongest macro F1 and best Web attack performance — the class where LightGBM fell apart at 0.31. In a real-world threat detector, minority class performance is what matters most."</p>
+      <p>"XGBoost was chosen not just for overall accuracy but for the strongest macro F1 and best Web attack performance, the class where LightGBM fell apart at 0.31. In a real-world threat detector, minority class performance is what matters most."</p>
     </div>
     <div class="cs-tags">
       <span class="cs-tag" style="color:var(--gold);border-color:rgba(200,154,74,.3);">11.8MB production model</span>
@@ -306,17 +355,17 @@ footer{background:var(--dark);padding:2rem 3.5rem;display:flex;justify-content:s
       <div class="cs-finding">
         <div class="cs-finding-num">Finding 02</div>
         <h3>IAT separates flood attacks instantly</h3>
-        <p>Inter-Arrival Time is the second strongest feature. DDoS and DoS attacks have near-zero packet intervals — a near-perfect discriminator with a single feature.</p>
+        <p>Inter-Arrival Time is the second strongest feature. DDoS and DoS attacks have near-zero packet intervals, a near-perfect discriminator with a single feature.</p>
       </div>
       <div class="cs-finding">
         <div class="cs-finding-num">Finding 03</div>
         <h3>15+ features are redundant</h3>
-        <p>Correlation matrix analysis identified over 15 features carrying duplicate information — a clear path to a lighter mobile model without meaningful accuracy loss.</p>
+        <p>Correlation matrix analysis identified over 15 features carrying duplicate information, a clear path to a lighter mobile model without meaningful accuracy loss.</p>
       </div>
       <div class="cs-finding">
         <div class="cs-finding-num">Finding 04</div>
         <h3>BruteForce leaks into Recon</h3>
-        <p>BruteForce misclassifies as Recon (9%) and Web (7%) due to structural similarity at the network flow level — a known open problem in the IoT security literature.</p>
+        <p>BruteForce misclassifies as Recon (9%) and Web (7%) due to structural similarity at the network flow level, a known open problem in the IoT security literature.</p>
       </div>
     </div>
   </div>
@@ -326,7 +375,7 @@ footer{background:var(--dark);padding:2rem 3.5rem;display:flex;justify-content:s
   <div class="cs-section fade-in">
     <div class="section-label">05 · System design</div>
     <div class="cs-h2">Built around one hard constraint:<br/><em>nothing personal leaves the device</em></div>
-    <p class="cs-p">The privacy architecture isn't a feature — it's a design constraint that shaped every technical decision. The ML model runs on the Pi, not in the cloud. Bluetooth scanning runs on the phone, not a server. Community reports are anonymized on-device before transmission.</p>
+    <p class="cs-p">The privacy architecture isn't a feature; it's a design constraint that shaped every technical decision. The ML model runs on the Pi, not in the cloud. Bluetooth scanning runs on the phone, not a server. Community reports are anonymized on-device before transmission.</p>
     <div class="cs-arch">
       <div class="cs-arch-card">
         <div class="cs-arch-tier">Tier 1 · Home network</div>
@@ -336,14 +385,14 @@ footer{background:var(--dark);padding:2rem 3.5rem;display:flex;justify-content:s
       <div class="cs-arch-card">
         <div class="cs-arch-tier">Tier 2 · Mobile</div>
         <h3>Distilled TFLite on-device</h3>
-        <p>Under 1MB compressed model, retaining 97–98% accuracy. Runs entirely on the phone for Bluetooth skimmer detection — zero server calls during scanning.</p>
+        <p>Under 1MB compressed model, retaining 97–98% accuracy. Runs entirely on the phone for Bluetooth skimmer detection, zero server calls during scanning.</p>
       </div>
     </div>
     <div style="margin-top:2.5rem;">
       <div class="section-label" style="margin-bottom:1rem;">DS decisions made</div>
       <ul class="cs-built">
         <li>Smart sampling: loaded every 5th of 169 CSVs (34 files, 9.5M rows) to balance dataset coverage against memory constraints</li>
-        <li>Attack category mapping: collapsed 34 granular labels into 8 semantic categories — DDoS, DoS, Mirai, Recon, Spoofing, Web, BruteForce, Benign</li>
+        <li>Attack category mapping: collapsed 34 granular labels into 8 semantic categories: DDoS, DoS, Mirai, Recon, Spoofing, Web, BruteForce, Benign</li>
         <li>Class imbalance handling: weighted XGBoost training to prevent Benign majority-class dominance over minority attack types</li>
         <li>SHAP interaction analysis: confirmed Protocol Type as the most decisive feature, interacting strongly with every other top predictor</li>
         <li>Hardware-aware model selection: chose XGBoost over neural approaches to enable direct Raspberry Pi deployment without GPU</li>
@@ -376,7 +425,7 @@ footer{background:var(--dark);padding:2rem 3.5rem;display:flex;justify-content:s
     <div class="section-label">07 · What's next</div>
     <div class="cs-h2">Immediate next steps</div>
     <ul class="cs-built">
-      <li>Hyperparameter tuning completes — best XGBoost parameters identified via RandomizedSearchCV (20 combinations, 3-fold CV on 500K sample)</li>
+      <li>Hyperparameter tuning completes best XGBoost parameters identified via RandomizedSearchCV (20 combinations, 3-fold CV on 500K sample)</li>
       <li>Final model retrained on full 7.6M training rows with optimal settings — Phase 1 complete</li>
       <li>Phase 2 begins — Pi deployment, live tshark capture pipeline, real-world detection validation</li>
       <li>First real catch documented and added to this page</li>
